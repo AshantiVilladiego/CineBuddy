@@ -1,0 +1,102 @@
+/* style.css */
+
+/* Global dark background */
+body { 
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #14181c; /* Letterboxd dark gray */
+  color: #d8d8d8; /* light gray text */
+  margin: 0;
+  padding: 0; 
+  
+}
+
+/* Dashboard container */
+.dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Headings */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #d8d8d8;
+  margin-bottom: 0.75rem;
+}
+
+/* Chart cards */
+.card {
+  background: #1c1f23; /* slightly lighter than body */
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.8);
+}
+
+/* Grid layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Accent colors for charts (Letterboxd palette) */
+:root {
+  --lb-green: #00c853;
+  --lb-orange: #ff6d00;
+  --lb-blue: #2196f3;
+  --lb-purple: #9c27b0;
+}
+
+
+/* Container for posters */
+.poster-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Poster styling */
+.poster {
+  position: absolute;
+  width: 150px;
+  height: auto;
+  opacity: 0.3;
+  transition: opacity 1s ease-in-out;
+  animation: floatPoster 20s linear infinite;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+/* Ghostly floating animation */
+@keyframes floatPoster {
+  from {
+    transform: translateY(100vh) rotate(0deg);
+  }
+  to {
+    transform: translateY(-120vh) rotate(15deg);
+  }
+}
